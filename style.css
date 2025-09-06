@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*Google Font (Poppins) applied to all text */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #fff8f5;
+    color: #4a1c1c;
+}
+
+/*Horizontal Navigation Bar with Hover Effects */
+nav {
+    background-color: #b3001b;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;               /*Makes it horizontal */
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff8f5;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /*Smooth hover */
+}
+
+nav ul li a:hover {
+    color: #d4af37;              /* Gold hover*/
+    text-shadow: 0 0 5px #d4af37;
+}
+
+/*Hero Section at 100% Viewport Height */
+#home {
+    height: 100vh;              /*Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #b3001b, #7a0013);
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+#home h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #ffdede;
+}
+
+/*"Hire Me" Button with Smooth Hover Animation */
+.hire-me-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid #d4af37;
+    background-color: transparent;
+    color: #d4af37;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;   /*Smooth animation */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.hire-me-btn:hover {
+    background-color: #d4af37;
+    color: #7a0013;
+    transform: scale(1.08);     /*Zoom effect on hover */
+}
+
+/* About Section */
+#about {
+    padding: 4rem 2rem;
+    background: #fff8f5;
+    text-align: center;
+}
+
+#about h2 {
+    color: #b3001b;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+#about img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-top: 2rem;
+    border: 4px solid #b3001b;
+}
+
+/* Projects and Contact Sections */
+#projects, #contact {
+    padding: 4rem 2rem;
+    background: #fbeaea;
+    text-align: center;
+}
+
+#projects h2,
+#contact h2 {
+    color: #7a0013;
+    margin-bottom: 1rem;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 0.8rem 1rem 0.2rem;
+    color: #b3001b;
+}
+
+.card p {
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem;
+    color: #4a1c1c;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.slider-image {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.slider-image.active {
+    display: block;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-buttons button {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input,
+form textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #b3001b;
+    border-radius: 5px;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+}
+
+form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #b3001b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d4af37;
+    color: #7a0013;
+}
+
+/*Section dividers for elegant flair */
+section {
+    border-bottom: 2px dashed #d4af37;
+}
+
+/*Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    /*Hero Section Text Scaling */
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home h2 {
+        font-size: 1.2rem;
+    }
+
+    /*Navigation Bar Becomes Vertical */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    /*Responsive About Image */
+    #about img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /*Reduce padding for all sections */
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #b3001b;
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #d4af37;
+    color: #7a0013;
+}

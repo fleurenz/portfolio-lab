@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="about">About Me</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>John Flourenz O. Baga</h1>
+        <h2>Back-end Developer</h2>
+        <button class="hire-me-btn">Hire Me</button>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m John Flourenz O. Baga — but most people just call me John. I’m someone who enjoys learning, connecting with others, and figuring things out, whether it’s through work, hobbies, or the everyday curveballs life throws. I’m passionate about personal growth and always open to new experiences that push me to think differently. Outside of what I do professionally, I’m the kind of person who enjoys a good conversation, quiet moments, and finding meaning in small things. I don’t claim to have everything figured out, but I do believe in showing up, doing my best, and treating people with kindness and respect.</p>
+        <img src="images/profile.png" alt="Profile Picture">
+    </section>
+
+    <section id="projects">
+        <h2>Recommended Projects</h2>
+        <div class="slider">
+            <img src="images/slide1.jpg" alt="Slide 1" class="slider-image active">
+            <img src="images/slide2.jpg" alt="Slide 2" class="slider-image">
+            <img src="images/slide3.jpg" alt="Slide 3" class="slider-image">
+            <div class="slider-buttons">
+                <button onclick="prevSlide()">❮</button>
+                <button onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+    <div class="project-cards">
+        <div class="card">
+            <img src="images/project1.jpg" alt="Project 1">
+            <h3>Basic Rock-Paper-Scissor Game System</h3>
+            <p>A simple yet functional Rock-Paper-Scissors game developed in C++ for practicing control structures and logic implementation.</p>
+        </div>
+        <div class="card">
+            <img src="images/project2.jpg" alt="Project 2">
+            <h3>Wanderer's Bazaar – Marketing System for Fantasy-based Game</h3>
+            <p>A creative and well-designed marketing system concept built for a fantasy-themed game, focusing on item listings, trade mechanics, and immersive design elements.</p>
+        </div>
+        <div class="card">
+            <img src="images/project3.jpg" alt="Project 3">
+            <h3>LRU and FIFO Calculator System</h3>
+            <p>A practical system that demonstrates memory management concepts through LRU (Least Recently Used) and FIFO (First-In, First-Out) page replacement algorithms.</p>
+        </div>
+    </div>
+</section>
+
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <button id="backToTopBtn" title="Back to Top">↑</button>
+
+    <script>
+    document.querySelector('.hire-me-btn').addEventListener('click', function() {
+        alert("Thanks for your interest! I’ll get back to you soon.");
+    });
+    </script>
+
+    <script>
+    // "Hire Me" Button Alert
+    document.querySelector('.hire-me-btn').addEventListener('click', function() {
+        alert("Thanks for your interest! I’ll get back to you soon.");
+    });
+
+    // Image Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider-image');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Initial display
+    showSlide(currentSlide);
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    // Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill in all fields before submitting.");
+            event.preventDefault(); // Stop form from submitting
+        } else {
+            alert("Message sent successfully!");
+        }
+    });
+
+    </script>
+</body>
+</html>
