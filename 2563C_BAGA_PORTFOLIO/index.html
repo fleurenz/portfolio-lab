@@ -1,142 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <ul>
-        <li><a href="home">Home</a></li>
-        <li><a href="about">About Me</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="contact">Contact</a></li>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo or Site Name -->
+        <div class="logo">
+          <!-- Use an image OR text-based logo -->
+          <a href="#home">
+            <!-- Option 1: Image logo -->
+            <!-- <img src="images/logo.png" alt="John Baga Logo" /> -->
+
+            <!-- Option 2: Text logo -->
+            <span>fleurenz.</span>
+          </a>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button
+          class="hamburger"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul id="primary-navigation" class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+    </header>
 
-    <section id="home">
-        <h1>John Flourenz O. Baga</h1>
-        <h2>Back-end Developer</h2>
-        <button class="hire-me-btn">Hire Me</button>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I’m John Flourenz O. Baga — but most people just call me John. I’m someone who enjoys learning, connecting with others, and figuring things out, whether it’s through work, hobbies, or the everyday curveballs life throws. I’m passionate about personal growth and always open to new experiences that push me to think differently. Outside of what I do professionally, I’m the kind of person who enjoys a good conversation, quiet moments, and finding meaning in small things. I don’t claim to have everything figured out, but I do believe in showing up, doing my best, and treating people with kindness and respect.</p>
-        <img src="images/profile.png" alt="Profile Picture">
-    </section>
-
-    <section id="projects">
-        <h2>Recommended Projects</h2>
-        <div class="slider">
-            <img src="images/slide1.jpg" alt="Slide 1" class="slider-image active">
-            <img src="images/slide2.jpg" alt="Slide 2" class="slider-image">
-            <img src="images/slide3.jpg" alt="Slide 3" class="slider-image">
-            <div class="slider-buttons">
-                <button onclick="prevSlide()">❮</button>
-                <button onclick="nextSlide()">❯</button>
+    <main>
+      <section id="home" class="home-section">
+        <div class="container home-content">
+          <!-- Left side: Intro text and CTAs -->
+          <div class="intro-text animate-left">
+            <h1>John Flourenz O. Baga</h1>
+            <h2>Back-end Developer</h2>
+            <p>
+              I build logical, reliable systems and enjoy solving problems behind
+              the scenes.
+            </p>
+            <div class="cta-buttons">
+              <a href="#projects" class="btn">View Projects</a>
+              <button class="btn hire-me-btn">Hire Me</button>
             </div>
+          </div>
+          <!-- Right side: Profile image -->
+          <div class="intro-image animate-right">
+            <img
+              src="images/profile.png"
+              alt="Portrait of John Flourenz O. Baga"
+            />
+          </div>
         </div>
-    <div class="project-cards">
-        <div class="card">
-            <img src="images/project1.jpg" alt="Project 1">
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container about-content">
+          <!-- First block -->
+          <div class="about-block animate-left">
+            <div class="about-text">
+              <p>
+                Hi, I’m John Flourenz O. Baga — but most people just call me John.
+                I’m someone who enjoys learning, connecting with others, and
+                figuring things out, whether it’s through work, hobbies, or the
+                everyday curveballs life throws.
+              </p>
+            </div>
+            <figure class="about-image">
+              <img
+                src="images/profile1.jpg"
+                alt="John Flourenz O. Baga smiling and looking away"
+              />
+            </figure>
+          </div>
+
+          <!-- Second block -->
+          <div class="about-block animate-right">
+            <figure class="about-image">
+              <img
+                src="images/profile2.jpg"
+                alt="John Flourenz O. Baga working on a computer"
+              />
+            </figure>
+            <div class="about-text">
+              <p>
+                I’m passionate about personal growth and always open to new
+                experiences that push me to think differently. Outside of what I
+                do professionally, I’m the kind of person who enjoys a good
+                conversation, quiet moments, and finding meaning in small things.
+              </p>
+              <p>
+                I don’t claim to have everything figured out, but I do believe in
+                showing up, doing my best, and treating people with kindness and
+                respect.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <h2>Recommended Projects</h2>
+
+        <!-- Featured Projects Slider -->
+        <div class="featured-slider">
+          <button class="slider-btn prev" aria-label="Previous project">❮</button>
+          <div class="slides-wrapper">
+            <div class="slide active">
+              <img
+                src="images/slide1.jpg"
+                alt="Screenshot of the Rock-Paper-Scissors game made in C++"
+              />
+              <div class="slide-caption">
+                <h3>Basic Rock-Paper-Scissor Game System</h3>
+                <p>
+                  A simple yet functional Rock-Paper-Scissors game developed in
+                  C++ for practicing control structures and logic implementation.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="images/slide2.jpg"
+                alt="Screenshot of Wanderer's Bazaar Marketing System interface"
+              />
+              <div class="slide-caption">
+                <h3>
+                  Wanderer's Bazaar – Marketing System for Fantasy-based Game
+                </h3>
+                <p>
+                  A creative and well-designed marketing system concept built for
+                  a fantasy-themed game, focusing on item listings, trade
+                  mechanics, and immersive design elements.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="images/slide3.jpg"
+                alt="Screenshot of LRU and FIFO Calculator System"
+              />
+              <div class="slide-caption">
+                <h3>LRU and FIFO Calculator System</h3>
+                <p>
+                  A practical system that demonstrates memory management concepts
+                  through LRU and FIFO page replacement algorithms.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="slider-btn next" aria-label="Next project">❯</button>
+        </div>
+
+        <!-- All Projects Grid -->
+        <div class="projects-grid">
+          <!-- Example project card -->
+          <div class="project-card">
+            <img
+              src="images/project1.jpg"
+              alt="Thumbnail of Rock-Paper-Scissors Game"
+            />
             <h3>Basic Rock-Paper-Scissor Game System</h3>
-            <p>A simple yet functional Rock-Paper-Scissors game developed in C++ for practicing control structures and logic implementation.</p>
-        </div>
-        <div class="card">
-            <img src="images/project2.jpg" alt="Project 2">
+            <p>
+              A simple yet functional Rock-Paper-Scissors game developed in C++
+              for practicing control structures and logic implementation.
+            </p>
+          </div>
+          <div class="project-card">
+            <img
+              src="images/project2.jpg"
+              alt="Thumbnail of Wanderer's Bazaar Marketing System"
+            />
             <h3>Wanderer's Bazaar – Marketing System for Fantasy-based Game</h3>
-            <p>A creative and well-designed marketing system concept built for a fantasy-themed game, focusing on item listings, trade mechanics, and immersive design elements.</p>
-        </div>
-        <div class="card">
-            <img src="images/project3.jpg" alt="Project 3">
+            <p>
+              A creative and well-designed marketing system concept built for a
+              fantasy-themed game, focusing on item listings, trade mechanics, and
+              immersive design elements.
+            </p>
+          </div>
+          <div class="project-card">
+            <img
+              src="images/project3.jpg"
+              alt="Thumbnail of LRU and FIFO Calculator System"
+            />
             <h3>LRU and FIFO Calculator System</h3>
-            <p>A practical system that demonstrates memory management concepts through LRU (Least Recently Used) and FIFO (First-In, First-Out) page replacement algorithms.</p>
+            <p>
+              A practical system that demonstrates memory management concepts
+              through LRU and FIFO page replacement algorithms.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-    </section>
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2>Contact Me</h2>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name">
-            <input type="email" id="email" placeholder="Your Email">
-            <textarea id="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+          <p class="contact-intro">
+            Got a question, idea, or project in mind? Reach out and let's talk!
+          </p>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+
+          <!-- Optional: contact details or social links -->
+          <div class="contact-links">
+            <p>Or reach me directly:</p>
+            <ul>
+              <li><a href="mailto:john@example.com">john@example.com</a></li>
+              <li>
+                <a href="https://github.com/yourprofile" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <button id="backToTopBtn" title="Back to Top">↑</button>
 
     <script>
-    document.querySelector('.hire-me-btn').addEventListener('click', function() {
-        alert("Thanks for your interest! I’ll get back to you soon.");
-    });
-    </script>
+      const hamburger = document.querySelector(".hamburger");
+      const navList = document.querySelector(".nav-list");
 
-    <script>
-    // "Hire Me" Button Alert
-    document.querySelector('.hire-me-btn').addEventListener('click', function() {
-        alert("Thanks for your interest! I’ll get back to you soon.");
-    });
+      hamburger.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        hamburger.classList.toggle("open");
+        hamburger.setAttribute(
+          "aria-expanded",
+          navList.classList.contains("active")
+        );
+      });
 
-    // Image Slider
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slider-image');
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+      // "Hire Me" Button Alert
+      document
+        .querySelector(".hire-me-btn")
+        .addEventListener("click", function () {
+          alert("Thanks for your interest! I’ll get back to you soon.");
         });
-    }
 
-    function nextSlide() {
+      // Image Slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
+
+      function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
-    }
+      }
 
-    function prevSlide() {
+      function prevSlide() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         showSlide(currentSlide);
-    }
+      }
 
-    // Initial display
-    showSlide(currentSlide);
+      // Slider buttons event listeners
+      document.querySelector(".slider-btn.next").addEventListener("click", nextSlide);
+      document.querySelector(".slider-btn.prev").addEventListener("click", prevSlide);
 
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopBtn.style.display = "block";
+      // Initial display
+      showSlide(currentSlide);
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTopBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backToTopBtn.style.display = "block";
         } else {
-            backToTopBtn.style.display = "none";
+          backToTopBtn.style.display = "none";
         }
-    };
-    
-    backToTopBtn.addEventListener('click', function() {
+      };
+
+      backToTopBtn.addEventListener("click", function () {
         window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+          top: 0,
+          behavior: "smooth",
         });
-    });
-    // Form Validation
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+      });
 
-        if (!name || !email || !message) {
+      // Form Validation
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          if (!name || !email || !message) {
             alert("Please fill in all fields before submitting.");
-            event.preventDefault(); // Stop form from submitting
-        } else {
+            event.preventDefault();
+          } else {
             alert("Message sent successfully!");
-        }
-    });
-
+          }
+        });
     </script>
-</body>
+    <!--footer-->
+    <footer>
+      <p>&copy; 2024 John Flourenz O. Baga. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
